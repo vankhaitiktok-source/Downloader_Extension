@@ -16,20 +16,9 @@ Chrome Extension + Local Server tải video YouTube 4K/8K & Bilibili chất lư�
 ### Phần 1: Cài đặt Server (Bắt buộc)
 
 **Tùy chọn A: Dùng bộ cài đặt có sẵn (Recommended)**
-1. Tải file `CaiDat_YT_Bili_V9.8.0.exe` từ [Releases](https://github.com/your-repo/releases)
+1. Tải file `Downloader_Extension v9.8.0` từ [Releases](https://github.com/vankhaitiktok-source/Downloader_Extension/releases/tag/Downloader_Extension_v9.8.0)
 2. Chạy file cài đặt và làm theo hướng dẫn
 3. Server sẽ tự động chạy khi khởi động Windows
-
-**Tùy chọn B: Chạy từ mã nguồn Python**
-```bash
-# 1. Cài đặt Python 3.8+
-# 2. Cài đặt thư viện
-pip install flask flask-cors yt-dlp pystray pillow
-
-# 3. Tải ffmpeg.exe và BBDown.exe đặt cùng thư mục với server.py
-# 4. Chạy server
-python server.py
-```
 
 ### Phần 2: Cài đặt Chrome Extension
 
@@ -38,46 +27,6 @@ python server.py
 3. Bật **Chế độ nhà phát triển** (Developer mode)
 4. Click **Tải tiện ích đã giải nén** (Load unpacked)
 5. Chọn thư mục chứa extension
-
-## 🔧 Cấu hình đường dẫn (Nếu cần thay đổi)
-
-### 1. Thay đổi đường dẫn trong file setup
-
-Mở file `setup_script.iss` và chỉnh sửa các đường dẫn:
-
-```innosetup
-[Files]
-; Thay đổi đường dẫn source cho phù hợp với máy bạn
-Source: "D:\TOOL\AutoImageFX\LAM_FILE_SETUP\dist\YT_Pro_Server.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\TOOL\AutoImageFX\LAM_FILE_SETUP\ffmpeg.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "D:\TOOL\AutoImageFX\LAM_FILE_SETUP\BBDown.exe"; DestDir: "{app}"; Flags: ignoreversion
-```
-
-Thay `D:\TOOL\AutoImageFX\LAM_FILE_SETUP` bằng đường dẫn thực tế trên máy bạn.
-
-### 2. Thay đổi đường dẫn trong build script
-
-Mở file `build.bat` và cập nhật:
-
-```batch
-cd /d "D:\TOOL\AutoImageFX\LAM_FILE_SETUP"
-```
-
-Và đường dẫn Inno Setup:
-
-```batch
-"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "setup_script.iss"
-```
-
-### 3. Cấu hình Server URL trong extension
-
-Mở file `background.js` và `sidepanel.js`:
-
-```javascript
-const SERVER_URL = 'http://127.0.0.1:5000';
-```
-
-Nếu bạn thay đổi port server, hãy cập nhật ở đây.
 
 ## 📖 Hướng dẫn sử dụng
 
@@ -99,23 +48,6 @@ Nếu bạn thay đổi port server, hãy cập nhật ở đây.
 
 ### Nút tải nhanh trên YouTube
 Khi xem video YouTube, nút "⬇️ HD" sẽ xuất hiện bên cạnh player. Click để tải nhanh ở chất lượng cao nhất.
-
-## 🗂️ Cấu trúc dự án
-
-```
-├── server.py              # Server chính (Python)
-├── ffmpeg.exe            # Xử lý video/audio
-├── BBDown.exe           # Core tải Bilibili
-├── yt-downloader-extension/
-│   ├── manifest.json    # Cấu hình extension
-│   ├── background.js    # Background script
-│   ├── content.js       # Inject nút vào YouTube
-│   ├── sidepanel.html   # Giao diện chính
-│   ├── sidepanel.js     # Logic sidepanel
-│   └── icon.png         # Icon extension
-├── build.bat            # Script build Windows
-└── setup_script.iss     # Script tạo installer
-```
 
 ## ⚠️ Lưu ý quan trọng
 
@@ -149,12 +81,6 @@ Dự án này chỉ dành cho mục đích giáo dục và sử dụng cá nhân
 ## 🤝 Đóng góp
 
 Mọi đóng góp, báo lỗi, đề xuất tính năng đều được chào đón!
-
-1. Fork repository
-2. Tạo branch mới (`git checkout -b feature/AmazingFeature`)
-3. Commit thay đổi (`git commit -m 'Add some AmazingFeature'`)
-4. Push lên branch (`git push origin feature/AmazingFeature`)
-5. Tạo Pull Request
 
 ## 📞 Hỗ trợ
 
