@@ -14,7 +14,7 @@ Chrome Extension + Local Server tải video YouTube 2K/4K/8K & Bilibili chất l
 ## 📦 Hướng dẫn cài đặt nhanh
 
 ### Bước 1: Tải và cài đặt Server
-1. **Tải file cài đặt** `CaiDat_YT_Bili_V9.9.0.exe` từ trang GitHub [Releases](https://github.com/vankhaitiktok-source/Downloader_Extension/releases/tag/Downloader_Extension_v9.9.0)
+1. **Tải file cài đặt** `CaiDat_V9.9.0.exe` từ trang GitHub [Releases](https://github.com/vankhaitiktok-source/Downloader_Extension/releases/tag/Downloader_Extension_v9.9.0)
 2. **Chạy file** đã tải về và làm theo hướng dẫn cài đặt.
 3. Sau khi cài đặt xong, trên màn hình Desktop sẽ xuất hiện shortcut **YT Pro Server**.
 
